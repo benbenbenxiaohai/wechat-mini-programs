@@ -1,0 +1,53 @@
+<view class="content">
+  <view class="error-message" wx:if="{{error != ''}}">{{error}}</view>
+  <view>
+    <text>第{{currentRoundNo}}局</text>
+  </view>
+
+  <view class="fan-list">
+    <text class="player">{{playerName1}}</text>
+    <view class="view-switch">输<switch checked="{{switchChecked1}}" bindchange="switchChange1"/>赢</view>
+    <view class="view-input"><input class="input" id="{{fanId1}}" type="number" value="{{fanArr[0]}}" placeholder="番数" bindinput="fanInput" /></view>
+    <view class="view-switch">全包<switch checked="{{switchQuanbaoChecked1}}" bindchange="switchQuanbaoChange1"/></view>
+  </view>
+  <view class="fan-list">
+    <text class="player">{{playerName2}}</text>
+    <view class="view-switch">输<switch checked="{{switchChecked2}}" bindchange="switchChange2"/>赢</view>
+    <view class="view-input"><input class="input" id="{{fanId2}}" type="number" value="{{fanArr[1]}}" placeholder="番数" bindinput="fanInput" /></view>
+    <view class="view-switch">全包<switch checked="{{switchQuanbaoChecked2}}" bindchange="switchQuanbaoChange2"/></view>
+  </view>
+  <view class="fan-list">
+    <text class="player">{{playerName3}}</text>
+    <view class="view-switch">输<switch checked="{{switchChecked3}}" bindchange="switchChange3"/>赢</view>
+    <view class="view-input"><input class="input" id="{{fanId3}}" type="number" value="{{fanArr[2]}}" placeholder="番数" bindinput="fanInput" /></view>
+    <view class="view-switch">全包<switch checked="{{switchQuanbaoChecked3}}" bindchange="switchQuanbaoChange3"/></view>
+  </view>
+  <view class="fan-list">
+    <text class="player">{{playerName4}}</text>
+    <view class="view-switch">输<switch checked="{{switchChecked4}}" bindchange="switchChange4"/>赢</view>
+    <view class="view-input"><input class="input" id="{{fanId4}}" type="number" value="{{fanArr[3]}}" placeholder="番数" bindinput="fanInput" /></view>
+    <view class="view-switch">全包<switch checked="{{switchQuanbaoChecked4}}" bindchange="switchQuanbaoChange4"/></view>
+  </view>
+  
+  <view class="button">
+    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="submitFan"> 提交番数 </button>
+  </view>
+  <view class="button">
+    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="toSummary"> 查看战况 </button>
+  </view>
+  <view wx:if="{{currentRoundNo > 1}}">
+    <text>上一局战况</text>
+    <view class="prev-score-list">
+      <view class="prev-score">{{playerName1}}</view>
+      <view class="prev-score">{{playerName2}}</view>
+      <view class="prev-score">{{playerName3}}</view>
+      <view class="prev-score">{{playerName4}}</view>
+    </view>
+    <view class="fan-list">
+      <view class="prev-score">{{previousRoundScore1}}</view>
+      <view class="prev-score">{{previousRoundScore2}}</view>
+      <view class="prev-score">{{previousRoundScore3}}</view>
+      <view class="prev-score">{{previousRoundScore4}}</view>
+    </view>
+  </view>
+</view>

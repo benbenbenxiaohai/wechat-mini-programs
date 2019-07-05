@@ -1,0 +1,16 @@
+/* pages/summary/summary.wxss */
+.layout-top {
+  display: flex;
+}
+.layout-middle {
+  display: flex;
+}
+.layout-bottom {
+  display: flex;
+}
+.layout-left {
+  width: 20%;
+}
+.layout-right {
+  width: 20%;
+}

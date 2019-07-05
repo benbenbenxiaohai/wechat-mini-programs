@@ -1,0 +1,22 @@
+<view class="content">
+  <view class="error-message" wx:if="{{error != ''}}">{{error}}</view>
+  <view class="item">
+    <text class="player">玩家1：</text>
+    <input class="input" id="{{playerId1}}" placeholder="请输入玩家姓名" bindinput="playerInput" />
+  </view>
+  <view class="item">
+    <text class="player">玩家2：</text>
+    <input class="input" id="{{playerId2}}" placeholder="请输入玩家姓名" bindinput="playerInput" />
+  </view>
+  <view class="item">
+    <text class="player">玩家3：</text>
+    <input class="input" id="{{playerId3}}" placeholder="请输入玩家姓名" bindinput="playerInput" />
+  </view>
+  <view class="item">
+    <text class="player">玩家4：</text>
+    <input class="input" id="{{playerId4}}" placeholder="请输入玩家姓名" bindinput="playerInput" />
+  </view>
+  <view class="button">
+    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="toScores"> 开始计分 </button>
+  </view>
+</view>

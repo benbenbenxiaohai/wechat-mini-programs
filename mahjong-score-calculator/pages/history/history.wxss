@@ -1,0 +1,28 @@
+/* pages/history/history.wxss */
+.game {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+.time {
+  text-align: center;
+  border: 1px solid black;
+}
+.player-names {
+  display: flex;
+}
+.player-name {
+  width: 25%;
+  border: 1px solid black;
+}
+.scores {
+  display: flex;
+}
+.score {
+  width: 25%;
+  border: 1px solid black;
+}
+.button {
+  max-width: 33%;
+  margin: auto;
+}

@@ -1,0 +1,37 @@
+.error-message {
+  color: red;
+}
+.fan-list {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.player {
+  width: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.view-switch {
+  width: 30%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.view-input {
+  width: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.input {
+  border: 1px solid black;
+}
+.button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.prev-score-list {
+  display: flex;
+}
+.prev-score {
+  width: 25%;
+}

@@ -1,0 +1,23 @@
+<view class="content">
+  <view class="layout-top">
+    <view class="layout-left">局数</view>
+    <view class="layout-right">{{playerName1}}</view>
+    <view class="layout-right">{{playerName2}}</view>
+    <view class="layout-right">{{playerName3}}</view>
+    <view class="layout-right">{{playerName4}}</view>
+  </view>
+  <view class="layout-middle">
+    <view class="layout-left">总分</view>
+    <view class="layout-right">{{sum1}}</view>
+    <view class="layout-right">{{sum2}}</view>
+    <view class="layout-right">{{sum3}}</view>
+    <view class="layout-right">{{sum4}}</view>
+  </view>
+  <view class="layout-bottom" wx:key="unique" wx:for="{{roundArr}}" wx:for-index="i" wx:for-item="round">
+    <view class="layout-left">{{i + 1}}</view>
+    <view class="layout-right">{{round.scoreArr[0]}}/{{round.fanArr[0]}}</view>
+    <view class="layout-right">{{round.scoreArr[1]}}/{{round.fanArr[1]}}</view>
+    <view class="layout-right">{{round.scoreArr[2]}}/{{round.fanArr[2]}}</view>
+    <view class="layout-right">{{round.scoreArr[3]}}/{{round.fanArr[3]}}</view>
+  </view>
+</view>

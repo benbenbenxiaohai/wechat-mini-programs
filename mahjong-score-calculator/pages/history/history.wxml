@@ -1,0 +1,22 @@
+<!--pages/history/history.wxml-->
+<view class="content">
+  <view class="game" wx:for="{{items}}" wx:key="unique">
+    <view class="time">{{item.created}}</view>
+    <view class="player-names">
+      <view class="player-name">{{item.playerNameArr[0]}}</view>
+      <view class="player-name">{{item.playerNameArr[1]}}</view>
+      <view class="player-name">{{item.playerNameArr[2]}}</view>
+      <view class="player-name">{{item.playerNameArr[3]}}</view>
+    </view>
+    <view class="scores">
+      <view class="score">{{item.sumArr[0]}}</view>
+      <view class="score">{{item.sumArr[1]}}</view>
+      <view class="score">{{item.sumArr[2]}}</view>
+      <view class="score">{{item.sumArr[3]}}</view>
+    </view>
+    <view class="button">
+      <button id="{{index}}" type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover"
+        disabled="{{disabled}}" bindtap="continueScore"> 继续计分 </button>
+    </view>
+  </view>
+</view>

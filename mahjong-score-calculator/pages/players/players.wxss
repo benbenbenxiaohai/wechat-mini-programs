@@ -1,0 +1,23 @@
+/* pages/players/players.wxss */
+.usermotto {
+  margin-top: 200px;
+}
+.error-message {
+  color: red;
+}
+.item {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.player {
+  width: 25%;
+}
+.input {
+  border: 1px solid black;
+}
+.button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
