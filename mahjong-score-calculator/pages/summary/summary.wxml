@@ -13,6 +13,13 @@
     <view class="layout-right">{{sum3}}</view>
     <view class="layout-right">{{sum4}}</view>
   </view>
+  <view class="layout-middle">
+    <view class="layout-left">金顶</view>
+    <view class="layout-right">{{cntJinDing1}}</view>
+    <view class="layout-right">{{cntJinDing2}}</view>
+    <view class="layout-right">{{cntJinDing3}}</view>
+    <view class="layout-right">{{cntJinDing4}}</view>
+  </view>
   <view class="layout-bottom" wx:key="unique" wx:for="{{roundArr}}" wx:for-index="i" wx:for-item="round">
     <view class="layout-left">{{i + 1}}</view>
     <view class="layout-right">{{round.scoreArr[0]}}/{{round.fanArr[0]}}</view>

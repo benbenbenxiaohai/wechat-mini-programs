@@ -17,6 +17,10 @@ Page({
     sum2: '',
     sum3: '',
     sum4: '',
+    cntJinDing1: '',
+    cntJinDing2: '',
+    cntJinDing3: '',
+    cntJinDing4: '',
   },
 
   /**
@@ -38,17 +42,24 @@ Page({
     })
 
     var sum = [0, 0, 0, 0];
+    var cntJinDing = [0, 0, 0, 0];
     for (var i = 0; i < roundArr.length; i++) {
-      sum[0] += roundArr[i].scoreArr[0];
-      sum[1] += roundArr[i].scoreArr[1];
-      sum[2] += roundArr[i].scoreArr[2];
-      sum[3] += roundArr[i].scoreArr[3];
+      for (var j = 0; j < 4; j++) {
+        sum[j] += roundArr[i].scoreArr[j];
+        if (roundArr[i].scoreArr[j] == Math.pow(2, (app.globalData.capFan - 4)) * 3) {//192
+          cntJinDing[j]++;
+        }
+      }
     }
     this.setData({
       sum1: sum[0],
       sum2: sum[1],
       sum3: sum[2],
-      sum4: sum[3]
+      sum4: sum[3],
+      cntJinDing1: cntJinDing[0],
+      cntJinDing2: cntJinDing[1],
+      cntJinDing3: cntJinDing[2],
+      cntJinDing4: cntJinDing[3]
     })
   },
 

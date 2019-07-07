@@ -54,6 +54,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    currentGameIdx: ""
+    currentGameIdx: "",
+    capFan: 10,
+    capScore: 50
   }
 })

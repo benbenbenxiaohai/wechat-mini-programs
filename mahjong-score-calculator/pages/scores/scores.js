@@ -33,6 +33,14 @@ Page({
     fanId3: '3',
     fanId4: '4',
     fanArr: [],
+    sum1: '',
+    sum2: '',
+    sum3: '',
+    sum4: '',
+    cntJinDing1: '',
+    cntJinDing2: '',
+    cntJinDing3: '',
+    cntJinDing4: '',
     previousRoundScore1: '',
     previousRoundScore2: '',
     previousRoundScore3: '',
@@ -76,7 +84,18 @@ Page({
     })
 
     var roundArr = this.data.gameArr[this.data.currentGameIdx].roundArr;
+    var sum = [0, 0, 0, 0];
+    var cntJinDing = [0, 0, 0, 0];
     if (roundArr.length > 0) {
+      for (var i = 0; i < roundArr.length; i++) {
+        for (var j = 0; j < 4; j++) {
+          sum[j] += roundArr[i].scoreArr[j];
+          if (roundArr[i].scoreArr[j] == Math.pow(2, (app.globalData.capFan - 4)) * 3) {//192
+            cntJinDing[j]++;
+          }
+        }
+      }
+
       this.setData({
         previousRoundScore1: roundArr[roundArr.length - 1].scoreArr[0],
         previousRoundScore2: roundArr[roundArr.length - 1].scoreArr[1],
@@ -84,6 +103,16 @@ Page({
         previousRoundScore4: roundArr[roundArr.length - 1].scoreArr[3]
       })
     }
+    this.setData({
+      sum1: sum[0],
+      sum2: sum[1],
+      sum3: sum[2],
+      sum4: sum[3],
+      cntJinDing1: cntJinDing[0],
+      cntJinDing2: cntJinDing[1],
+      cntJinDing3: cntJinDing[2],
+      cntJinDing4: cntJinDing[3]
+    })
   },
 
   /**
@@ -318,12 +347,12 @@ Page({
 
     //get score array, considering jin ding, quan bao
     var scoreArr = [];
-    if (relativeFanArr[(winnerIdx + 1) % 4] <= -10 &&
-      relativeFanArr[(winnerIdx + 2) % 4] <= -10 &&
-      relativeFanArr[(winnerIdx + 3) % 4] <= -10
+    if (relativeFanArr[(winnerIdx + 1) % 4] <= app.globalData.capFan * (-1) &&
+      relativeFanArr[(winnerIdx + 2) % 4] <= app.globalData.capFan * (-1) &&
+      relativeFanArr[(winnerIdx + 3) % 4] <= app.globalData.capFan * (-1)
     ) {
       //jin ding
-      var loserScore = -64;
+      var loserScore = Math.pow(2, (app.globalData.capFan - 4)) * (-1);//-64
       scoreArr[winnerIdx] = loserScore * 3 * (-1);
       scoreArr[(winnerIdx + 1) % 4] = loserScore;
       scoreArr[(winnerIdx + 2) % 4] = loserScore;
@@ -334,8 +363,8 @@ Page({
       for (var i = 0; i < 4; i++) {
         if (i != winnerIdx) {
           var loserScore = 0;
-          if (relativeFanArr[i] <= -10) {
-            loserScore = -50;
+          if (relativeFanArr[i] <= app.globalData.capFan * (-1)) {
+            loserScore = app.globalData.capScore * (-1);
             scoreArr[i] = loserScore;
           } else {
             loserScore = Math.pow(2, (relativeFanArr[i] * (-1) - 4)) * (-1);
@@ -377,5 +406,16 @@ Page({
     wx.navigateTo({
       url: '../summary/summary',
     })
+  },
+
+  deletePrevRound: function() {
+    console.log("DEBUG: Deleting previous round");
+    if (this.data.gameArr[this.data.currentGameIdx].roundArr.length > 0) {
+      this.data.gameArr[this.data.currentGameIdx].roundArr.pop();
+
+      wx.setStorageSync('gameArr', this.data.gameArr);
+
+      this.onLoad();
+    }
   }
 })

@@ -32,8 +32,39 @@
   <view class="button">
     <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="submitFan"> 提交番数 </button>
   </view>
+  <view>
+    <text>当前战况</text>
+    <view class="sum-score-list">
+      <view class="sum-score"></view>
+      <view class="sum-score">{{playerName1}}</view>
+      <view class="sum-score">{{playerName2}}</view>
+      <view class="sum-score">{{playerName3}}</view>
+      <view class="sum-score">{{playerName4}}</view>
+    </view>
+    <view class="sum-score-list">
+      <view class="sum-score">总分</view>
+      <view class="sum-score">{{sum1}}</view>
+      <view class="sum-score">{{sum2}}</view>
+      <view class="sum-score">{{sum3}}</view>
+      <view class="sum-score">{{sum4}}</view>
+    </view>
+    <view class="sum-score-list">
+      <view class="sum-score">美金</view>
+      <view class="sum-score">${{sum1/4}}</view>
+      <view class="sum-score">${{sum2/4}}</view>
+      <view class="sum-score">${{sum3/4}}</view>
+      <view class="sum-score">${{sum4/4}}</view>
+    </view>
+    <view class="sum-score-list">
+      <view class="sum-score">金顶</view>
+      <view class="sum-score">{{cntJinDing1}}</view>
+      <view class="sum-score">{{cntJinDing2}}</view>
+      <view class="sum-score">{{cntJinDing3}}</view>
+      <view class="sum-score">{{cntJinDing4}}</view>
+    </view>
+  </view>
   <view class="button">
-    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="toSummary"> 查看战况 </button>
+    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="toSummary"> 查看战况明细 </button>
   </view>
   <view wx:if="{{currentRoundNo > 1}}">
     <text>上一局战况</text>
@@ -43,11 +74,14 @@
       <view class="prev-score">{{playerName3}}</view>
       <view class="prev-score">{{playerName4}}</view>
     </view>
-    <view class="fan-list">
+    <view class="prev-score-list">
       <view class="prev-score">{{previousRoundScore1}}</view>
       <view class="prev-score">{{previousRoundScore2}}</view>
       <view class="prev-score">{{previousRoundScore3}}</view>
       <view class="prev-score">{{previousRoundScore4}}</view>
     </view>
+  </view>
+  <view class="button" wx:if="{{currentRoundNo > 1}}">
+    <button type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover" disabled="{{disabled}}" bindtap="deletePrevRound"> 删除上一轮 </button>
   </view>
 </view>

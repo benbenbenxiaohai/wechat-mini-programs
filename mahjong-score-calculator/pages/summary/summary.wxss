@@ -1,16 +1,24 @@
 /* pages/summary/summary.wxss */
+.content {
+  border: 2px solid black;
+}
 .layout-top {
   display: flex;
+  border: 1px solid black;
 }
 .layout-middle {
   display: flex;
+  border: 1px solid black;
 }
 .layout-bottom {
   display: flex;
+  border: 1px solid black;
 }
 .layout-left {
   width: 20%;
+  border: 1px solid black;
 }
 .layout-right {
   width: 20%;
+  border: 1px solid black;
 }

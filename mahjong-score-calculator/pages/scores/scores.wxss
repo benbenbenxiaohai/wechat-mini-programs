@@ -29,6 +29,12 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.sum-score-list {
+  display: flex;
+}
+.sum-score {
+  width: 20%;
+}
 .prev-score-list {
   display: flex;
 }

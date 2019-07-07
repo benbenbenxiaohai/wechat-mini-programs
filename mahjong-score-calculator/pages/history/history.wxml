@@ -16,7 +16,7 @@
     </view>
     <view class="button">
       <button id="{{index}}" type="default" size="{{primarySize}}" plain="{{plain}}" hover-class="button-hover"
-        disabled="{{disabled}}" bindtap="continueScore"> 继续计分 </button>
+        disabled="{{disabled}}" bindtap="continueScore"> 查看 </button>
     </view>
   </view>
 </view>
